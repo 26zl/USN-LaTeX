@@ -56,15 +56,22 @@
 \RequirePackage{booktabs}
 \RequirePackage{longtable}
 \RequirePackage{array}
+\RequirePackage{tabularx}
 
 % --- Figures and captions ---
 \RequirePackage{float}
+\RequirePackage{placeins}
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 \captionsetup{font=small, labelfont=bf, labelsep=colon}
 
-% --- Lists ---
+% --- Lists and multi-column ---
 \RequirePackage{enumitem}
+\RequirePackage{multicol}
+
+% --- Algorithms / pseudocode ---
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
 
 % --- Quotes and code ---
 \RequirePackage{csquotes}
@@ -100,6 +107,11 @@
 % are unnumbered but still appear in the TOC (tocdepth=3).
 \setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{3}
+
+% --- Figure/table numbering per section (1.1, 1.2, 2.1, ...) ---
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\numberwithin{equation}{section}
 
 % --- Heading styles ---
 \titleformat{\section}

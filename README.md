@@ -2,6 +2,8 @@
 
 LaTeX-maler for **bacheloroppgave** og **mastergradsavhandling** ved [Universitetet i Sørøst-Norge (USN)](http://www.usn.no), tilpasset USNs offisielle Word-maler.
 
+> **Tips:** BSc-malen passer også fint til vanlige arbeidskrav, semesteroppgaver og innleveringer — ikke bare bacheloroppgaver. Bare endre `\thesistype{Bacheloroppgave}` i `BScThesis.tex` til f.eks. `\thesistype{Arbeidskrav}` eller `\thesistype{Semesteroppgave}`.
+
 Designgrunnlag: [USNs maler for oppgaveskriving](https://min.usn.no/startside-student/tjenester-for-studenter/oppgaveskriving/maler-for-oppgaveskriving/).
 
 ## Standardoppsett
