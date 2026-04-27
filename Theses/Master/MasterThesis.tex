@@ -1,0 +1,225 @@
+\documentclass{USN-MSc}
+
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{thesis.bib}
+
+% --- Fyll inn forsideinformasjon ---
+\faculty{Fakultet for\dots.}
+\subjectinfo{Emnenavn/emnekode}
+\semester{Årstall og semester}
+\candidate{[Navn/kandidatnummer]}
+\title{[Tittel]}
+\subtitle{[Undertittel]}
+
+\begin{document}
+
+\USNcover
+
+% Publisher info page: institutt, årstall, forfatter, studiepoeng
+\USNpublisherinfo{Institutt for [\dots]}{[Årstall]}{[Forfatternavn]}{[antall]}
+
+% =====================================================
+\USNsection{Sammendrag}
+
+Sett inn en oppsummering av avhandlingen.
+
+% =====================================================
+\USNsection{Abstract}
+
+Same as in sammendrag, but in English (optional).
+
+% =====================================================
+\tableofcontents
+
+% =====================================================
+\USNsection{Forord}
+
+Forordet skal gi plass til opplysninger og kommentarer som ikke hører hjemme i
+selve avhandlingen, men som forfatteren synes er viktig å få fram. Det kan
+være praktiske opplysninger («avhandlingen krever noe kjennskap til
+programmering»), leserveiledning («avhandlingen har et vedleggshefte») og
+omtale av personer eller institusjoner («vi vil gjerne takke firmaet A/S Fort
+og Gæernt for samarbeidet»).
+
+\bigskip
+\noindent\textit{<Sted, dato>}\\
+\textit{<Studentnavn>}
+
+% =====================================================
+\section{Innledning}
+
+Dette er Universitetet i Sørøst-Norges mal for mastergradsavhandlinger. Teksten
+i malen erstatter du med din egen.
+
+Malen inneholder en del forhåndsdefinerte stiler som hjelper deg til å få et
+ensartet utseende på overskrifter og på tekst gjennom hele avhandlingen.
+Elementer som sidetall, innholdsfortegnelse og annet er også lagt inn slik at
+du ikke skal behøve å formatere dette selv.
+
+\subsection{Noen trinn for å lage en god mastergradsavhandling}
+
+Det kan være lurt å ta en utskrift av malen før du begynner for å beholde
+denne veiledningen når du begynner å endre på innholdet.
+
+\subsection{Stiler}
+
+Denne malen bruker en del stiler for å formatere (sørge for utseende på)
+avsnitt. Stiler er forhåndsdefinerte oppsett for all slags utseende på teksten
+i avsnitt, som skrifttype (font), skriftstørrelse, fet, kursiv, hevet, senket,
+avstand mellom linjene, innrykk osv.
+
+En av de store fordelene med å bruke stiler, er at alle avsnitt som har samme
+stil, vil ha samme utseende (format) -- for eksempel overskrifter.
+
+\subsection{Fotnoter}
+
+Fotnoter\footnote{Slik ser en fotnote ut.} er en måte å gi tilleggsinformasjon
+som ikke passer i hovedteksten. Disse nummereres automatisk.
+
+\subsection{Litteraturhenvisninger}
+
+Litteraturhenvisninger kan du gjøre slik: \parencite{seip1993}. Eller bare rett
+i teksten \parencite{bombadil1999}. Henvisninger listes så i litteraturlisten
+bakerst.
+
+\subsection{Henvisninger til KI}
+
+Dersom det er brukt KI i arbeidet med masteroppgave er det naturlig at det
+skrives en mer omfattende tekst om hvordan KI er brukt og hvordan det har
+påvirket arbeidet med oppgaven. Lag en egen del i oppgaven, for eksempel med
+overskriften ``Bruk av kunstig intelligens'', eller legg det som fotnote.
+
+Se mer informasjon om USN sine retningslinjer for bruk av KI her:
+\url{https://www.usn.no/studier/studiekvalitetsuka/eksamen-fusk/retningslinjer-for-bruk-av-kunstig-intelligens-ki-ved-eksamen-og-studentoppgaver}
+
+\subsection{Tabeller}
+
+Under følger et eksempel på en tabell med tabelltekst
+(Tabell~\ref{tab:august2005}). Tabeller skal nummereres. Bruk gjerne
+\texttt{booktabs}-pakken (\texttt{\textbackslash toprule},
+\texttt{\textbackslash midrule}, \texttt{\textbackslash bottomrule}) for et
+profesjonelt utseende.
+
+\begin{table}[H]
+  \centering
+  \caption{Kalendermåneden august 2005}
+  \label{tab:august2005}
+  \begin{tabular}{ccccccc}
+    \toprule
+    Mandag & Tirsdag & Onsdag & Torsdag & Fredag & Lørdag & Søndag \\
+    \midrule
+    1  & 2  & 3  & 4  & 5  & 6  & 7  \\
+    8  & 9  & 10 & 11 & 12 & 13 & 14 \\
+    15 & 16 & 17 & 18 & 19 & 20 & 21 \\
+    22 & 23 & 24 & 25 & 26 & 27 & 28 \\
+    29 & 30 & 31 &    &    &    &    \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Figurer og bilder}
+
+Figurer skal nummereres og ha figurtekst plassert under figuren
+(Figur~\ref{fig:usnlogo}). Med \texttt{subcaption}-pakken kan du også sette
+opp delfigurer.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{USN_logo_main_nb_sort}
+  \caption{USN-logoen brukt i denne malen.}
+  \label{fig:usnlogo}
+\end{figure}
+
+\subsection{Formler}
+
+Formler skal være innrykket og nummerert:
+\begin{equation}
+  (x+a)^n = \sum_{k=0}^{n} \binom{n}{k} x^k a^{n-k}
+  \label{eq:binomial}
+\end{equation}
+
+For SI-enheter kan du bruke \texttt{siunitx}: \SI{9.81}{\meter\per\second\squared},
+\SI{42}{\kilo\gram}.
+
+\subsection{Kode}
+
+Kodelistinger settes med \texttt{listings}-pakken:
+
+\begin{lstlisting}[language=Python, caption={Eksempel på Python-kode.}, label={lst:hello}]
+def hello(name):
+    print(f"Hei, {name}!")
+
+hello("verden")
+\end{lstlisting}
+
+Se Listing~\ref{lst:hello}.
+
+\subsection{Lister}
+
+Med \texttt{enumitem} kan lister tilpasses:
+\begin{itemize}[leftmargin=*, itemsep=0.2em]
+  \item Punktliste med justert venstremargin.
+  \item Andre punkt.
+\end{itemize}
+
+\begin{enumerate}[label=\arabic*., leftmargin=*]
+  \item Nummerert liste.
+  \item Andre punkt.
+\end{enumerate}
+
+% =====================================================
+\section{Om resten av malen}
+
+Resten av malen inneholder et forslag til en disposisjon for en
+mastergradsavhandling med hovedoverskrifter. Hovedoverskriftene har stilen
+``Overskrift~1'' og de følges av vanlig tekst.
+
+% =====================================================
+\section{Problemstilling}
+
+Vanlig tekst.
+
+% =====================================================
+\section{Metoder}
+
+Vanlig tekst.
+
+% =====================================================
+\section{Resultater}
+
+% =====================================================
+\section{Diskusjon}
+
+% =====================================================
+\section{Konklusjon}
+
+% =====================================================
+\USNsection{Referanser/litteraturliste}
+
+Alle avhandlinger skal ha en litteraturliste. Denne sorteres vanligvis
+alfabetisk på forfatter.
+
+\nocite{*}
+\printbibliography[heading=none]
+
+% =====================================================
+\USNsection{Oversikt over tabeller og figurer}
+
+\listoftables
+\listoffigures
+
+% =====================================================
+% Switch numbering to "Vedlegg A", "Vedlegg B", ...
+\USNappendix
+
+\section{Vedleggstittel}
+
+Vedlegg kan være forsøksresultater, tegninger, diagrammer, spørreskjemaer
+eller lignende. Store datamengder bør plasseres i vedleggene, ellers kan
+leseren gå trøtt av detaljer.
+
+\section{Annet vedlegg}
+
+Vedlegg som har flere sider skal sidenummereres.
+
+\end{document}

@@ -1,6 +1,11 @@
-## emacs:
+## Editor / tooling:
 auto/
 *~
+*.bak
+*.sav
+.vscode/
+.claude/
+CLAUDE.md
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -13,6 +18,7 @@ auto/
 
 ## Intermediate documents:
 *.dvi
+*.xdv
 *-converted-to.*
 # these rules might exclude image files for figures etc.
 # *.ps
@@ -37,7 +43,6 @@ auto/
 
 ## Auxiliary and intermediate files from other packages:
 
-
 # algorithms
 *.alg
 *.loa
@@ -53,7 +58,7 @@ acs-*.bib
 *.snm
 *.vrb
 
-#(e)ledmac/(e)ledpar
+# (e)ledmac/(e)ledpar
 *.end
 *.[1-9]
 *.[1-9][0-9]
@@ -134,7 +139,3 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
-
-# WinEdt
-*.bak
-*.sav

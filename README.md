@@ -1,64 +1,108 @@
-# USN-LaTeX file repository
-This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* templates for the use at the
-[University of South-Eastern Norway - USN](http://www.usn.no)
+# USN-LaTeX
 
-## Installation and usage of the project template
-All current templates now **need** to be processed using either [LuaLaTeX](https://en.wikipedia.org/wiki/LuaTeX) or [XeLaTeX](https://en.wikipedia.org/wiki/XeTeX) engines.
-Processing with the deprecated `latex` or `pdflatex` commands will not work.
-Both, *XeLaTeX* and *LuaLaTeX*, are shipped with all major LaTeX distributions (e.g., MiKTeX, MacTeX, TeXLive) and you just need to configure your system  to use one of them.
+LaTeX-maler for **bacheloroppgave** og **mastergradsavhandling** ved [Universitetet i Sørøst-Norge (USN)](http://www.usn.no), tilpasset USNs offisielle Word-maler.
 
-### Theses templates:
+Designgrunnlag: [USNs maler for oppgaveskriving](https://min.usn.no/startside-student/tjenester-for-studenter/oppgaveskriving/maler-for-oppgaveskriving/).
 
-The files can be found under the [`Theses`](Theses) directory.
+## Standardoppsett
 
-#### `BScThesis`
-A template for BSc project reports and theses. It consists of:
-  * [`BScThesis.pdf`](https://github.com/dietmarw/USN-LaTeX/raw/master/Theses/BScThesis.pdf): Example PDF file created using `BScThesis.tex`.
-  * [`BScThesis.tex`](Theses/BScThesis.tex): Example LaTeX file for editing
-  * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `BScThesis.tex`
-  * [`USN-BSc.cls`](Theses/USN-BSc.cls): Special LaTeX class file used by `BScThesis.tex` (**Do not edit!**)
-  * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-BSc.cls` (**Do not edit!**)
+- **Sideformat:** A4 med 2,5 cm marger
+- **Brødtekst:** Times New Roman 12 pt
+- **Linjeavstand:** 1,5
+- **Overskrifter og forside:** Carlito (sans-serif, USNs visuelle identitet)
+- **Språk:** norsk (bokmål)
+- **Kildehåndtering:** BibLaTeX med APA-stil
+- **Klikkbar innholdsfortegnelse**
 
-#### `MScThesis`
-A template for MSc project reports and theses. It consists of:
-  * [`MScThesis.pdf`](https://github.com/dietmarw/USN-LaTeX/raw/master/Theses/MScThesis.pdf): Example PDF file created using `MScThesis.tex`.
-  * [`MScThesis.tex`](Theses/MScThesis.tex): Example LaTeX file for editing
-  * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `MScThesis.tex`
-  * [`USN-MSc.cls`](Theses/USN-MSc.cls): Special LaTeX class file used by `MScThesis.tex` (**Do not edit!**)
-  * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-MSc.cls` (**Do not edit!**)
+## Bruk
 
-#### `PhDThesis`
-A current template for PhD theses. It consists of:
-  * [`PhDThesis.pdf`](https://github.com/dietmarw/USN-LaTeX/raw/master/Theses/PhDThesis.pdf): Example PDF file created using `PhDThesis.tex`.
-  * [`PhDThesis.tex`](Theses/PhDThesis.tex): Example LaTeX file for editing
-  * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `PhDThesis.tex`
-  * [`USN-PhD.cls`](Theses/USN-PhD.cls): Special LaTeX class file used by `PhDThesis.tex` (**Do not edit!**)
-  * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-PhD.cls` (**Do not edit!**)
+Hver mal ligger som en **selvstendig undermappe** under `Theses/`. Du trenger kun å kopiere én undermappe — den inneholder alt som trengs.
 
-#### Older project files
-  * [`oldPhDThesis`](Theses/oldPhDThesis): Working but outdated PhDThesis template.
-  * [`oldBScExample`](Theses/oldBScExample): is kept for historical references. It's an example report done by students and parts were used for the new *BScThesis* template
+### Overleaf
 
-### Logos:
+1. Gå til [overleaf.com](https://www.overleaf.com) → New Project → Upload Project.
+2. Last opp som zip enten `Theses/BSc/`-mappen eller `Theses/Master/`-mappen.
+3. I Overleaf: Menu → Compiler → **XeLaTeX**.
+4. Kompiler.
 
-A repository of the offical USN logos in proper vector formats:
-  * [`logos`](logos)
+### Eget repo / lokalt
 
-## License
+Kopier én av undermappene (`Theses/BSc/` eller `Theses/Master/`) til ditt eget prosjekt. Bygg med:
 
-&copy; Dietmar Winkler
+```sh
+make            # bygger PDF
+make clean      # fjerner mellomfiler
+make distclean  # fjerner alt inkludert PDF-en
+```
 
-This work may be distributed and/or modified under the
-conditions of the [LaTeX Project Public License](LICENSE), either version 1.3
-of this license or (at your option) any later version.
-The latest version of this license is in
-http://www.latex-project.org/lppl.txt
-and version 1.3 or later is part of all distributions of LaTeX
-version 2005/12/01 or later.
+Krever [XeLaTeX](https://en.wikipedia.org/wiki/XeTeX) eller [LuaLaTeX](https://en.wikipedia.org/wiki/LuaTeX) (følger med MacTeX, TeX Live og MiKTeX). Times New Roman må være installert som systemfont.
 
-## Development and contribution
-The templates are developed by [@dietmarw](https://github.com/dietmarw)
+### Bygg begge fra dette repoet
 
-You may report any issues with using the [Issues](../../issues) button.
+```sh
+cd Theses
+make            # bygger begge: BSc/BScThesis.pdf og Master/MasterThesis.pdf
+make BSc        # bygger kun bachelor
+make Master     # bygger kun master
+```
 
-Contributions in shape of [Pull Requests](../../pulls) are always welcome.
+## Filstruktur
+
+```text
+Theses/
+├── Makefile                        # Bygger begge maler
+├── BSc/                            # Selvstendig — kan kopieres alene
+│   ├── BScThesis.tex               # Hovedfil — rediger denne
+│   ├── USN-BSc.cls                 # Klassedefinisjon
+│   ├── thesis.bib                  # BibLaTeX-kilder
+│   ├── Makefile
+│   └── fig/
+│       ├── cover-shapes.png
+│       └── USN_logo_main_nb_sort.pdf
+└── Master/                         # Selvstendig — kan kopieres alene
+    ├── MasterThesis.tex            # Hovedfil — rediger denne
+    ├── USN-MSc.cls                 # Klassedefinisjon
+    ├── thesis.bib
+    ├── Makefile
+    └── fig/
+        ├── cover-shapes.png
+        └── USN_logo_main_nb_sort.pdf
+```
+
+## Forsidemetadata
+
+Sett øverst i `.tex`-filen:
+
+```latex
+\faculty{Fakultet for teknologi, naturvitenskap og maritime fag}
+\subjectinfo{TS3000 — Eksempelkode}
+\semester{Vår 2026}
+\candidate{Kandidatnummer 42}
+\title{Min oppgavetittel}
+\subtitle{En undertittel}
+```
+
+For master, fyll i tillegg ut publisher-info-siden:
+
+```latex
+\USNpublisherinfo{Institutt for [...]}{2026}{Forfatternavn}{60}
+```
+
+## Funksjoner
+
+| Bruk | Kommando |
+|---|---|
+| Klikkbar overskrift i TOC (unummerert) | `\USNsection{Sammendrag}` |
+| Vedlegg (Vedlegg A, B, …) | `\USNappendix` foran `\section{...}` |
+| Bilder/figurer | `\includegraphics{...}` (legg filer i `fig/`) |
+| Tabeller | `\toprule`, `\midrule`, `\bottomrule` (booktabs) |
+| Lister | `\begin{itemize}[leftmargin=*]` (enumitem) |
+| Kode | `\begin{lstlisting}[language=Python, caption=…]` |
+| Matematikk | `\begin{equation} … \end{equation}` |
+| SI-enheter | `\SI{9.81}{\meter\per\second\squared}` |
+| Sitater | `\parencite{nøkkel}` med BibLaTeX |
+| Lenker | `\url{...}` eller `\href{url}{tekst}` |
+
+## Lisens
+
+Basert på den opprinnelige [USN-LaTeX-malen av Dietmar Winkler](https://github.com/dietmarw/USN-LaTeX), med modifikasjoner av Laurent Zogaj. Distribuert under [LaTeX Project Public License](LICENSE) (LPPL) versjon 1.3 eller nyere.

@@ -1,22 +1,17 @@
-all: clean BSc MSc PhD
+all: BSc Master
 
 BSc:
-	latexmk BScThesis
+	$(MAKE) -C BSc
 
-MSc:
-	latexmk MScThesis
-
-PhD:
-	latexmk PhDThesis
-
-gogo:
-	latexmk -gg BScThesis
-	latexmk -gg MScThesis
-	latexmk -gg PhDThesis
+Master:
+	$(MAKE) -C Master
 
 clean:
-	latexmk -c
+	$(MAKE) -C BSc clean
+	$(MAKE) -C Master clean
 
-distclean: clean
-	latexmk -C
-	rm -fr auto/
+distclean:
+	$(MAKE) -C BSc distclean
+	$(MAKE) -C Master distclean
+
+.PHONY: all BSc Master clean distclean

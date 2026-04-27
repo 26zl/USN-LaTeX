@@ -1,0 +1,157 @@
+\documentclass{USN-BSc}
+
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{thesis.bib}
+
+% --- Fyll inn forsideinformasjon ---
+\faculty{Fakultet for\dots.}
+\subjectinfo{Emnenavn/emnekode}
+\semester{Årstall og semester}
+\candidate{[Navn/kandidatnummer]}
+\title{[Tittel]}
+\subtitle{[Undertittel]}
+
+\begin{document}
+
+\USNcover
+
+% --- Innholdsfortegnelse ---
+\tableofcontents
+\clearpage
+
+% =====================================================
+\section{Innledning}
+
+Denne malen er et forslag til hvordan du kan sette opp oppgaven. Får du
+retningslinjer fra faglærer eller fra studiet følger du disse.
+
+Disse retningslinjene gir generelle føringer for hvordan skriftlige oppgaver
+kan struktureres. Samtidig kan de brukes som en mal for skriving av oppgaver,
+der studenten erstatter teksten og overskriftene i disse retningslinjene med
+sitt eget innhold.
+
+% =====================================================
+\section{Innhold og struktur}
+
+Rekkefølgen på oppgavens innholdselementer skal ha en oppbygning som denne
+(sammendrag og forord er kun aktuelt ved større oppgaver, og oppgavens lengde
+og spørsmålsformulering avgjør hvilke elementer som skal være med):
+
+\begin{itemize}
+  \item[] Forside
+  \item[] Evt.\ sammendrag
+  \item[] Evt.\ forord
+  \item[] Innholdsfortegnelse med sideangivelser
+  \item[] Innledning
+  \item[] Metode
+  \item[] Teori
+  \item[] Analyse
+  \item[] Drøfting
+  \item[] Konklusjon
+  \item[] Litteraturliste
+  \item[] Evt.\ vedlegg. Vedlegg nummereres, og vedlegg som har flere sider
+          skal sidenummereres.
+\end{itemize}
+
+% =====================================================
+\section{Overskrifter}
+
+Overskrifter skal ha en logisk struktur etter hva som er mest viktig.
+Hovedkapittelet markeres med Overskrift~1 som over dette avsnittet. Strukturen
+skal gjøres synlig ved å bruke tall for inndeling av overskriftene, og ved å
+bruke en skriftstørrelse og eventuelt skrifttype som skiller seg ut fra annen
+tekst og reflekterer hva som er mest viktig. Overskriftene skal være
+venstrejustert. Det skal ikke være punktum etter overskrift. I større oppgaver
+skal hovedkapitlene starte på ny side. Det vil være naturlig å bruke
+overskrift~1, 2 og eventuelt 3, som eksemplifisert i dette dokumentet.
+
+Hvordan legge inn flere kapitler: bruk \verb|\section{...}| for Overskrift~1,
+\verb|\subsection{...}| for Overskrift~2, og \verb|\subsubsection{...}| for
+Overskrift~3. Overskrift~1 starter automatisk på ny side.
+
+\subsection{Overskrift 2}
+
+Overskrift~2 brukes til hovedpunkt innenfor et kapittel.
+
+\subsubsection{Overskrift 3}
+
+Overskrift~3 brukes til underpunkt innenfor hovedpunkter (overskrift~2).
+
+% =====================================================
+\section{Kildehenvisninger, sitering og litteraturliste}
+
+Alle oppgaver skal ha en litteraturliste. Denne sorteres vanligvis alfabetisk
+på forfatter.
+
+\subsection{Kildekompasset}
+
+Det finnes mange formelle systemer for å skrive en korrekt litteraturliste. Et
+av de mest brukte systemene er APA. Kildekompasset har en utmerket
+eksempelsamling i APA, se \url{https://kildekompasset.no/}. Andre systemer som
+er mye brukt er Harvard, Vancouver og IEEE.
+
+\subsection{Henvisninger til KI}
+
+Dersom det er brukt KI i arbeidet med bacheloroppgave er det naturlig at det
+skrives en mer omfattende tekst om hvordan KI er brukt og hvordan det har
+påvirket arbeidet med oppgaven. Lag en egen del i oppgaven, for eksempel med
+overskriften ``Bruk av kunstig intelligens'', eller legg det som fotnote.
+
+Se mer informasjon om USN sine retningslinjer for bruk av KI her:
+\url{https://www.usn.no/studier/studiekvalitetsuka/eksamen-fusk/retningslinjer-for-bruk-av-kunstig-intelligens-ki-ved-eksamen-og-studentoppgaver}
+
+% =====================================================
+\section{Etiske retningslinjer for skriftlige studentoppgaver}
+
+Disse etiske retningslinjene gjelder for alle oppgaver som utføres av studenter
+ved Universitetet i Sørøst-Norge. Spesielle regler for den enkelte oppgave kan
+i tillegg være angitt fra fakultetet.
+
+Studentoppgaver knyttet til praksisstudier eller kliniske studier vil som regel
+inngå som en del av den ordinære og etablerte virksomheten på praksisstedet.
+Enkelte oppgaver vil derimot kunne ha preg av å være forskning. Det vil si at
+studentens arbeid er planlagt å omfatte innsamling av data og/eller inneholde
+elementer av forsøk, hvor målet er utvikling av ny kunnskap. I disse tilfeller
+må det vurderes om det bør søkes om tillatelse og prosjektplan legges fram for
+Regional Etisk Komité (REK) for vurdering. Det er et ansvar for både student,
+praksisstedets veileder og universitetet å nøye vurdere hvordan det enkelte
+prosjekt skal forholde seg til dette. Et første skritt er å orientere seg på
+heimesida til Etiske forskningskomitéer:
+\url{https://www.forskningsetikk.no/} for å vurdere om det aktuelle arbeidet
+faller innenfor mandatet til komiteene.
+
+\subsection{Anonymisering av data}
+
+Studenten har taushetsplikt. Studentens læresituasjon er underordnet generelle
+bestemmelser om personvern. Alle person- og stedsdata som benyttes i en
+undersøkelse, et prosjekt eller i en studentoppgave må anonymiseres slik at
+ikke person eller sted kan identifiseres i den skriftlige
+rapporten/besvarelsen. Anonymisering av opplysninger er studentens ansvar. For
+å bidra til at personer og sted ikke kan identifiseres må studenten om
+nødvendig avstå fra eller omskrive data. Manglende ivaretakelse av kravet om
+anonymisering kan medføre at studentens arbeid blir vurdert til ikke bestått.
+
+\subsection{Formell tillatelse/samtykke}
+
+I de tilfeller hvor studentens arbeid omfatter selve praksisstedet og dets
+ansatte, skal samtykke innhentes fra ledelsen og eventuelt den enkelte ansatte
+som det skal innhentes data fra. Ledelsen for praksisstedet kan sette grenser
+for studentens arbeid/datainnsamling.
+
+\subsection{Offentliggjøring av oppgaver}
+
+Universitetet kan benytte deler av godkjente oppgaver til undervisning, og kan
+benytte oppgaver i forskningssammenheng. Publisering av hele oppgaver eller
+bruk av studentarbeider til andre formål kan kun gjøres med særskilt tillatelse
+fra vedkommende student(er). Student eller høgskole har muligheter for å
+klausulere et skriftlig studentarbeid. Begrunnelsen vil i slike tilfeller være
+at innholdet i rapporten kan skade en tredjepart om rapporten ble offentlig
+tilgjengelig, selv ved forsøk på å anonymisere innholdet.
+
+% =====================================================
+\USNsection{Litteraturliste}
+
+\nocite{*}
+\printbibliography[heading=none]
+
+\end{document}
